@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var bitcoinModel = (JSONModel)ViewData["BitcoinPrice"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bitcoin Price:</h1>
+    <h3>
+        @Html.Raw(ViewData["RefreshIntervlInSeconds"])
+        @Html.Raw(@bitcoinModel.data.amount) @Html.Raw(@bitcoinModel.data.currency)
+    </h3>
+</div>
